@@ -19,11 +19,15 @@
   "authors": [
     {
       "name": "Treebeard",
-      "discord": "the_treebeard",
-      "flags": {}
+      "discord": "the_treebeard"
     }
   ],
-  "url": "https://github.com/The-Treebeard/piety",
+  "esmodules": [
+    "scripts/piety-tab.js"
+  ],
+  "styles": [
+    "styles/piety.css"
+  ],
   "packs": [
     {
       "name": "piety-information",
@@ -37,5 +41,13 @@
       "system": "dnd5e",
       "flags": {}
     }
-  ]
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/The-Treebeard/piety"
 }
