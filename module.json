@@ -1,0 +1,41 @@
+{
+  "id": "piety",
+  "title": "PIety",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "description": "Implements the <em>Piety</em> System from DnD5e.",
+  "authors": [
+    {
+      "name": "Treebeard",
+      "discord": "the_treebeard",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/The-Treebeard/piety",
+  "packs": [
+    {
+      "name": "piety-information",
+      "label": "Piety Information",
+      "path": "packs/piety-information",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    }
+  ]
+}
