@@ -28,20 +28,6 @@
   "styles": [
     "styles/piety.css"
   ],
-  "packs": [
-    {
-      "name": "piety-information",
-      "label": "Piety Information",
-      "path": "packs/piety-information",
-      "type": "JournalEntry",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "system": "dnd5e",
-      "flags": {}
-    }
-  ],
   "languages": [
     {
       "lang": "en",
