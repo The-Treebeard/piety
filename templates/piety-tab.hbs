@@ -1,0 +1,17 @@
+<div class="tab piety" data-group="primary" data-tab="piety">
+    <div class="piety-header">
+        <h1>{{localize "Piety.Faith"}}</h1>
+        <div>
+            <h2 class="piety-score-heading">
+                <span>{{localize "Piety.PietyScore"}}</span>
+            </h2>
+            <div class="piety-score">
+                <button type="button" data-action="piety-score-decrease">-</button>
+                <h3 aria-label="Piety.Piety">
+                    {{piety.pietyScore}}
+                </h3>
+                <button type="button" data-action="piety-score-increase">+</button>
+            </div>
+        </div>
+    </div>
+</div>

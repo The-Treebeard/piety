@@ -1,0 +1,45 @@
+.piety {
+    padding-top: 10px;
+}
+
+.piety-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.piety-score-heading {
+    border: none;
+    color: var(--color-pf-primary);
+    font: 400 var(--font-size-22) var(--serif-condensed);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.piety-score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.piety-score h3 {
+    border-image-repeat: repeat;
+    border-image-slice: 11;
+    /* border-image-source: url(); */
+    border-image-width: 14px;
+    border-style: double;
+    align-items: center;
+    display: flex;
+    font: 700 var(--font-size-24) var(--serif);
+    height: 2.875rem;
+    justify-content: center;
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
