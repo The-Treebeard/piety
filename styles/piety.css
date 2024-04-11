@@ -6,8 +6,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+.piety-header h1, input, h3 {
+    text-align: center;
+}
+.piety-header h1 {
+    text-decoration: underline;
 }
 
 .piety-score-heading {
@@ -27,19 +33,92 @@
     justify-content: center;
     align-content: center;
 }
-
-.piety-score h3 {
-    border-image-repeat: repeat;
-    border-image-slice: 11;
-    /* border-image-source: url(); */
-    border-image-width: 14px;
-    border-style: double;
-    align-items: center;
-    display: flex;
-    font: 700 var(--font-size-24) var(--serif);
-    height: 2.875rem;
-    justify-content: center;
+.piety-score h2 {
+    border: 3px solid black;
+    padding: .5rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    vertical-align: middle;
     margin: 0;
-    padding-right: 15px;
-    padding-left: 15px;
+    border-image: url(../assets/Decorative-Border.svg) 30% / 1.5rem;
+}
+.piety-score button {
+    background-color: rgba(255, 243, 177, 0.2);
+    border: 2px outset black;
+}
+.piety-score button:first-child {
+    border-radius: 50% 0 0 50%;
+}
+.piety-score button:last-child {
+    border-radius: 0 50% 50% 0;
+}
+
+div.description, div.description textarea {
+    text-align: center;
+}
+div.description h2 {
+    text-decoration: underline;
+}
+
+ul.piety-attributes {
+    column-count: 2;
+    padding: 0;
+    column-gap: 2rem;
+}
+ul.piety-attributes li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+.piety-attributes label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+ul.piety-attributes span:first-child {
+    font-size: var(--font-size-12);
+}
+ul.piety-attributes span:nth-child(2) {
+    min-height: 1em;
+    border-bottom: 1px solid #191813;
+    flex: 1;
+}
+
+div.ideals-banes {
+    gap: 2rem;
+}
+.ideals-banes h2 {
+    border-bottom: 1px solid black;
+}
+.ideals-banes a {
+    float: right;
+}
+.ideals-banes li > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.ideals-banes p {
+    margin: 0;
+}
+
+div.gifts {
+    text-align: center;
+    gap: 2rem;
+}
+div.gifts h3, h2.gifts {
+    border-bottom: 1px solid black;
+}
+div.gifts textarea, h2.gifts {
+    text-align: center;
+}
+
+h3.active-threshold {
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+h3.active-threshold, h3.active-threshold ~ p {
+    text-shadow: 0 0 1rem gold;
 }

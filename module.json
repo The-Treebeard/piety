@@ -11,7 +11,9 @@
       {
         "id": "dnd5e",
         "type": "system",
-        "compatibility": {}
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
       }
     ]
   },
@@ -23,7 +25,7 @@
     }
   ],
   "esmodules": [
-    "scripts/piety-tab.js"
+    "scripts/piety-tab.mjs"
   ],
   "styles": [
     "styles/piety.css"
@@ -35,5 +37,11 @@
       "path": "lang/en.json"
     }
   ],
-  "url": "https://github.com/The-Treebeard/piety"
+  "system": ["dnd5e"],
+  "url": "https://github.com/The-Treebeard/piety",
+  "manifest": "https://github.com/The-Treebeard/piety/releases/latest/download/module.json",
+  "readme": "/README.md",
+  "changelog": "/CHANGELOG.md",
+  "license": "/LICENSE",
+  "bugs": "https://github.com/The-Treebeard/piety/issues"
 }

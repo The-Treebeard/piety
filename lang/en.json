@@ -1,6 +1,19 @@
 {
     "Piety": {
-        "Faith": "Faith",
-        "PietyScore": "Piety Score"
+        "God-Goddess": "God/Goddess",
+        "PietyScore": "Piety Score",
+        "Description": "Description",
+        "Thresholds": "Thresholds",
+        "Piety": "Piety",
+        "Ideals": {
+            "Title":  "Earning Piety",
+            "Add": "Add ideal",
+            "Delete": "Delete ideal"
+        },
+        "Banes": {
+            "Title": "Losing Piety",
+            "Add": "Add bane",
+            "Delete": "Delete bane"
+        }
     }
 }

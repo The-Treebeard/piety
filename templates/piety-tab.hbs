@@ -1,17 +1,175 @@
-<div class="tab piety" data-group="primary" data-tab="piety">
+<div class="tab piety {{isActive}}" data-group="primary" data-tab="piety">
     <div class="piety-header">
-        <h1>{{localize "Piety.Faith"}}</h1>
         <div>
-            <h2 class="piety-score-heading">
+            <h1>{{localize "Piety.God-Goddess"}}</h1>
+            {{#if isEdit}}
+            <input type="text" name="flags.piety.deityName" value="{{piety.deityName}}">
+            {{else}}
+            <h3>{{piety.deityName}}</h3>
+            {{/if}}
+        </div>
+        <div>
+            <h1 class="piety-score-heading">
                 <span>{{localize "Piety.PietyScore"}}</span>
-            </h2>
+            </h1>
             <div class="piety-score">
+                {{#if isEdit}}
                 <button type="button" data-action="piety-score-decrease">-</button>
-                <h3 aria-label="Piety.Piety">
+                {{/if}}
+                <h2 aria-label="Piety.Piety">
                     {{piety.pietyScore}}
-                </h3>
+                </h2>
+                {{#if isEdit}}
                 <button type="button" data-action="piety-score-increase">+</button>
+                {{/if}}
             </div>
         </div>
     </div>
+    <div class="description">
+        {{!-- {{editor descriptionHTML target="flags.piety.description" button=false editable=@root.isEdit engine="prosemirror" collaborate=false}} --}}
+        <h2>{{localize "Piety.Description"}}</h2>
+        {{#if isEdit}}
+            <textarea name="flags.piety.description">{{piety.description}}</textarea>
+        {{else}}
+            {{{newlineToBreak piety.description}}}
+        {{/if}}
+    </div>
+    <div>
+        <ul class="piety-attributes">
+            <li>
+                <label>
+                    <span class="roboto-upper">Alignment</span>
+                    {{#if isEdit}}
+                    <input type="text" name="flags.piety.alignment" value="{{piety.alignment}}">
+                    {{else}}
+                    <span>{{piety.alignment}}</span>
+                    {{/if}}
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span class="roboto-upper">Cleric Domains</span>
+                    {{#if isEdit}}
+                    <input type="text" name="flags.piety.domains" value="{{piety.domains}}">
+                    {{else}}
+                    <span>{{piety.domains}}</span>
+                    {{/if}}
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span class="roboto-upper">Classes</span>
+                    {{#if isEdit}}
+                    <input type="text" name="flags.piety.classes" value="{{piety.classes}}">
+                    {{else}}
+                    <span>{{piety.classes}}</span>
+                    {{/if}}
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span class="roboto-upper">Backgrounds</span>
+                    {{#if isEdit}}
+                    <input type="text" name="flags.piety.backgrounds" value="{{piety.backgrounds}}">
+                    {{else}}
+                    <span>{{piety.backgrounds}}</span>
+                    {{/if}}
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div class="ideals-banes flexrow">
+        <div data-field="ideals">
+            <div class="ideal-bane-header">
+                <h2 class="icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <span>{{localize "Piety.Ideals.Title"}}</span>
+                {{#if isEdit}}
+                <a
+                    data-action="add-ideal-bane"
+                    data-tooltip="Piety.Ideals.Add"
+                ><i class="fa-solid fa-plus"></i></a>
+                {{/if}}
+                </h2>
+            </div>
+            <ul>
+                {{~#each piety.ideals as |line index|~}}
+                    <li>
+                        <div>
+                            {{#if ../isEdit}}
+                                <input
+                                    type="text"
+                                    data-index="{{index}}"
+                                    value="{{line}}"
+                                />
+                                <a
+                                    data-action="delete-ideal-bane"
+                                    data-tooltip="Piety.Ideals.Delete"
+                                    data-index="{{index}}"
+                                ><i class="fa-solid fa-trash"></i></a>
+                            {{else}}
+                                <p>{{line}}</p>
+                            {{/if}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div data-field="banes">
+            <div>
+                <h2>
+                    <i class="fa-solid fa-face-frown"></i>
+                    <span>{{localize "Piety.Banes.Title"}}</span>
+                {{#if isEdit}}
+                <a
+                    data-action="add-ideal-bane"
+                    data-tooltip="Piety.Banes.Add"
+                ><i class="fa-solid fa-plus"></i></a>
+                {{/if}}
+                </h2>
+            </div>
+            <ul>
+                {{~#each piety.banes as |line index|~}}
+                    <li>
+                        <div>
+                            {{#if ../isEdit}}
+                                <input
+                                    type="text"
+                                    data-index="{{index}}"
+                                    value="{{line}}"
+                                />
+                                <a
+                                    data-action="delete-ideal-bane"
+                                    data-tooltip="Piety.Banes.Delete"
+                                    data-index="{{index}}"
+                                ><i class="fa-solid fa-trash"></i></a>
+                            {{else}}
+                                <p>{{line}}</p>
+                            {{/if}}
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <h2 class="gifts">{{localize "Piety.Thresholds"}}</h2>
+    <div class="gifts flexrow">
+        {{> gift name="gift1" threshold=threshold1 pietyGift=piety.gift1}}
+        {{> gift name="gift2" threshold=threshold2 pietyGift=piety.gift2}}
+    </div>
+    <div class="gifts flexrow">
+        {{> gift name="gift3" threshold=threshold3 pietyGift=piety.gift3}}
+        {{> gift name="gift4" threshold=threshold4 pietyGift=piety.gift4}}
+    </div>
 </div>
+
+{{#*inline "gift"}}
+    <div>
+        <h3 {{#if (gte piety.pietyScore threshold) }}class="active-threshold"{{/if}}>{{localize "Piety.Piety"}} {{threshold}}</h3>
+        {{#if isEdit}}
+            <textarea name="flags.piety.{{name}}">{{pietyGift}}</textarea>
+        {{else}}
+            {{{newlineToBreak pietyGift }}}
+        {{/if}}
+        </div>
+{{/inline}}
