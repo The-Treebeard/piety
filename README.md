@@ -1,4 +1,4 @@
-# piety
+# Piety for DnD5e
 Implements the DnD5e Piety system on the character sheet. You can customize the score thresholds for each gift in the settings.
 | _Main View_ | _Edit View_ |
 |:---:|:---:|
